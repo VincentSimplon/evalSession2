@@ -10,7 +10,9 @@ package connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class AccesBD {
 	
@@ -41,6 +43,11 @@ public class AccesBD {
 			// 2 - Initialiser la connexion.
 			Connection connection = DriverManager.getConnection(url, utilisateur, motDePasse);
 			System.out.println("La connexion est établie.");
+			
+			// 3 - Création d'un objet Statement une fois que la connexion est réussie pour pouvoir exécuter des requêtes.
+			Statement instruction = connection.createStatement();
+			
+			
 
 		} catch(SQLException sqle) {
 			sqle.printStackTrace();
@@ -50,4 +57,9 @@ public class AccesBD {
 			System.out.println("La tentative de connexion a echouée.");
 		}
 	}
-}
+	
+		
+		
+		
+	}
+
