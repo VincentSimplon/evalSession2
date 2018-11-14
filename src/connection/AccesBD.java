@@ -23,7 +23,7 @@ public class AccesBD {
 	private static String utilisateur="root";
 	private static String motDePasse="Bruc3Wayn3023007";
 	private static String pilote = "com.mysql.cj.jdbc.Driver";
-	private static String url = "jdbc:mysql://localhost:3306/bd-avion";
+	private static String url = "jdbc:mysql://localhost:3306/bd-apprenants";
 
 
 	/* 	on d�clare un objet de la classe Connection de java.sql
