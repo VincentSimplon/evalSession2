@@ -23,12 +23,13 @@ public class AccesBD {
 	private static String utilisateur="root";
 	private static String motDePasse="Bruc3Wayn3023007";
 	private static String pilote = "com.mysql.cj.jdbc.Driver";
-	private static String url = "jdbc:mysql://localhost:3306/bd-apprenants";
+	private static String url = "jdbc:mysql://localhost:3306/bd-apprenants?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC\r\n" + 
+			"com.mysql.cj.jdbc.Driver";
 
 
-	/* 	on d�clare un objet de la classe Connection de java.sql
-	 * 	Il permet de g�rer la connexion entre notre programme java
-	 * 	et la base de donn�es.
+	/* 	on declare un objet de la classe Connection de java.sql
+	 * 	Il permet de gerer la connexion entre notre programme java
+	 * 	et la base de donnees.
 	 */
 	private static Connection connexion=null;
 
@@ -36,19 +37,19 @@ public class AccesBD {
 	{
 		try
 		{
-			Class.forName(pilote).newInstance();
+			Class.forName(pilote);
 		}
 		catch (Exception e)
 		{
 
 			System.out.println(e);
-			JOptionPane.showMessageDialog(null,"Pilote non valide ou introuvable !","AccesBD",JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(null," non valide ou introuvable !","AccesBD",JOptionPane.WARNING_MESSAGE);
 
 		}
 	}
 	
 	/**
-	 * M�thode qui retourne un objet de type Connection
+	 * Methode qui retourne un objet de type Connection
 	 * @return Connection
 	 */
 	public synchronized static Connection getConnection()
