@@ -1,4 +1,11 @@
 package connection;
+/**	=====================================================
+ * @author Vincent.Co
+ *	Package : connection
+ *
+ * Connexion à la base de données bd_apprenants.
+========================================================
+ */
 
 import java.sql.Connection;
 import java.sql.DriverManager;
