@@ -1,7 +1,11 @@
 package methodesRequetes;
 
 /**
- * Prepared
+ * @author Christine
+ * 
+ * PreparedStatement :
+ * executeUpdate :
+ * 
  */
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -70,7 +74,7 @@ public class Crud {
 		
 	}
 	
-	public static void updateName(Apprenant apprenant) throws SQLException {
+	public static void updateName() throws SQLException {
 		
 		
 		System.out.println("Entrez le numéro de l'apprenant que vous voulez modifier : ");
@@ -88,7 +92,17 @@ public class Crud {
 		
 	}
 	
-	public static void deleteApprenant() {
+	public static void deleteApprenant() throws SQLException {
+		
+		System.out.println("Entrez le numéro de l'apprenant que vous voulez supprimer : ");
+		int numero = saisie.nextInt();
+		
+		PreparedStatement supprimer = AccesBd.getConnection().prepareStatement("DELETE apprenant WHERE apprenantId = ?");
+		
+		supprimer.setInt(2, numero);
+		
+		supprimer.executeUpdate();
+		
 		
 	}
 
