@@ -12,7 +12,7 @@ import table.Avoir;
 
 public class Crud {
 	
-	Scanner saisie;
+	static Scanner saisie = new Scanner(System.in);
 
 	public static void createNewApprenant(Apprenant apprenant) throws SQLException {
 		
@@ -55,7 +55,7 @@ public class Crud {
 	
 	public static void updateName() {
 		
-		saisie = new Scanner(System.in);
+		
 		System.out.println("Entrez le nom d'un apprenant pour le modifier : ");
 		String apprenant = saisie.nextLine();
 		
