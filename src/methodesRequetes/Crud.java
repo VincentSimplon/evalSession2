@@ -6,7 +6,7 @@ package methodesRequetes;
  * PreparedStatement : Une instruction SQL est precompilee et stockee dans un PreparedStatementobjet. 
  * Cet objet peut ensuite etre utilise pour executer efficacement cette instruction plusieurs fois.
  * 
- * executeUpdate : Ex�cute l'instruction SQL fournie, qui peut �tre une instruction 
+ * executeUpdate : Execute l'instruction SQL fournie, qui peut etre une instruction 
  * INSERT, UPDATE ou DELETE ; ou une instruction SQL qui ne retourne rien.
  * 
  */

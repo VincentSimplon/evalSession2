@@ -3,8 +3,8 @@ package table;
 /**
  * @author Christine
  * initialisation des variables de la TABLE avoir
- * création des constructeurs
- * création des getter et des setter
+ * creation des constructeurs
+ * creation des getter et des setter
  */
 
 public class Avoir {
