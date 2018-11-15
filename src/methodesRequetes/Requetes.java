@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import connection.AccesBD;
 import table.Apprenant;
 
 public class Requetes {
@@ -21,23 +22,21 @@ public class Requetes {
 	 * @throws ClassNotFoundException
 	 * @throws SQLException 
 	 */
-	public static ArrayList<Apprenant> afficherNomEtPrenomApprenant () throws ClassNotFoundException, SQLException {
+	public static ArrayList<Apprenant> afficherNomEtPrenomApprenant() throws ClassNotFoundException, SQLException {
 		
-		ArrayList<>  avions = new ArrayList<Avion>();
+		ArrayList<Apprenant>  etudiants = new ArrayList<Apprenant>();
 		String requete	= "SELECT nom, prenom FROM apprenant";
-		ResultSet resultat = AccesBD.executerQuery(requete);
+		ResultSet resultat = AccesBD.executeRequete(requete);
+		
 		while(resultat.next())
 		{
-			Avion avion = new Avion();
-			avion.setId(resultat.getInt("AV_ID"));
-			avion.setConstructeur(resultat.getString("AV_CONST"));
-			avion.setModele(resultat.getString("AV_MODELE"));
-			avion.setCapacite(resultat.getInt("AV_CAPACITE"));
-			avion.setSite(resultat.getString("AV_SITE"));
-			avions.add(avion);
+			Apprenant eleve = new Apprenant();
+			eleve.setNom(resultat.getString("nom"));
+			eleve.setPrenom(resultat.getString("prenom"));
+			etudiants.add(eleve);
 			
 		}
-		return avions;
+		return etudiants;
 		
 	}
 	
