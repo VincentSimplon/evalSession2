@@ -1,5 +1,10 @@
 package main;
 
+/**
+ * @author Vincent
+ * class qui permet l'affichage des differentes methodes dans un menu
+ */
+
 import java.util.Scanner;
 
 import java.sql.SQLException;
@@ -9,6 +14,13 @@ import methodesRequetes.Requetes;
 public class Affichage {
 
 	static Scanner saisie;
+	
+	/**
+	 * Methode qui affiche le menu et renvois la methode correspondant au choix du client
+	 * la methode est dans une boucle do 
+	 * @param args
+	 * @throws SQLException
+	 */
 
 	public static void main(String[] args) throws SQLException {
 
@@ -18,7 +30,7 @@ public class Affichage {
 
 
 			System.out.println("==========================================================\n" + 
-					"Bienvenue sur la base de données des apprenants Simplon 3.\n" + 
+					"Bienvenue sur la base de donnees des apprenants Simplon 3.\n" + 
 					"==========================================================\n" + 
 					"Que souhaitez vous faire ?\n" + " \n" + 
 					"1 - Afficher le nom et le prénom de tous les apprenants.\n" + 
@@ -45,11 +57,11 @@ public class Affichage {
 				break;
 
 			case 4 : 
-				Requetes.rechercheApprenantPratiqueActivite("");
+				Requetes.rechercheApprenantPratiqueActivite("");// parametre methode : String activite
 				break;
 
 			case 5 : 
-				System.out.println("A bientôt");
+				System.out.println("A bientot");
 				break;
 
 			default :

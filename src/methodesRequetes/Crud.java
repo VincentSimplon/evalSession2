@@ -3,8 +3,11 @@ package methodesRequetes;
 /**
  * @author Christine
  * 
- * PreparedStatement :
- * executeUpdate :
+ * PreparedStatement : Une instruction SQL est precompilee et stockee dans un PreparedStatementobjet. 
+ * Cet objet peut ensuite etre utilise pour executer efficacement cette instruction plusieurs fois.
+ * 
+ * executeUpdate : Exécute l'instruction SQL fournie, qui peut être une instruction 
+ * INSERT, UPDATE ou DELETE ; ou une instruction SQL qui ne retourne rien.
  * 
  */
 import java.sql.Date;
@@ -20,6 +23,8 @@ import table.Avoir;
 public class Crud {
 	
 	static Scanner saisie = new Scanner(System.in);
+	
+	
 /**
  * Methode qui creer un nouvel apprenant dans la table apprenant
  * @param apprenant
@@ -40,12 +45,13 @@ public class Crud {
 		changement.executeUpdate();
 		
 	}
-	/**
-	 * Methode qui ajoute une nouvelle activite a un apprenant
-	 * @param avoir
-	 * @throws SQLException
-	 */
 	
+	
+/**
+* Methode qui ajoute une nouvelle activite a un apprenant
+* @param avoir
+* @throws SQLException
+*/	
 	public static void newActiviteNewApprenant(Avoir avoir) throws SQLException {
 		
 		PreparedStatement ajouter = AccesBd.getConnection().prepareStatement("INSERT INTO `avoir` VALUES( ? , ? )");
@@ -57,11 +63,11 @@ public class Crud {
 		
 	}
 	
-	/**
-	 * Methode qui affiche les activite non utilise par les apprenants
-	 * @throws SQLException
-	 */
 	
+/**
+* Methode qui affiche les activite non utilise par les apprenants
+* @throws SQLException
+*/	
 	public static void activiteNotUse() throws SQLException {
 		
 		ResultSet resultat = AccesBd.faireUneRequete("SELECT activite.nomActivite FROM activite WHERE activite.activiteId NOT IN (SELECT avoir.activiteId FROM avoir)");
@@ -73,11 +79,12 @@ public class Crud {
 		}
 		
 	}
-	/**
-	 * Methode qui change le nom d'un apprenant
-	 * @throws SQLException
-	 */
 	
+	
+/**
+* Methode qui change le nom d'un apprenant
+* @throws SQLException
+*/	
 	public static void updateName() throws SQLException {
 		
 		System.out.println("Entrez le nouveau nom d'un apprenant pour le modifier : ");
@@ -95,6 +102,11 @@ public class Crud {
 		
 	}
 	
+	
+	/**
+	 * Methode qui supprime un apprenant de la class apprenant
+	 * @throws SQLException
+	 */
 	public static void deleteApprenant() throws SQLException {
 		
 		System.out.println("Entrez le numéro de l'apprenant que vous voulez supprimer : ");
@@ -105,9 +117,7 @@ public class Crud {
 		supprimer.setInt(2, numero);
 		
 		supprimer.executeUpdate();
-		
-		
-		
+				
 	}
 
 }

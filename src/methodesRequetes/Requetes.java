@@ -1,5 +1,10 @@
 package methodesRequetes;
 
+/**
+ * @author Vincent
+ * Methode demander pour le projet de la Session2
+ */
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,7 +18,12 @@ import table.Apprenant;
 public class Requetes {
 
 	static Scanner saisie;
-
+	
+	
+/**
+ * Methode qui retourne la liste des noms et prenoms de tous les apprenants
+ * @throws SQLException
+ */
 	public static void afficherNomEtPrenomTousLesApprenants() throws SQLException {
 
 		ResultSet resultat = AccesBd.faireUneRequete("SELECT apprenantId, nom, prenom FROM apprenant");
@@ -30,7 +40,13 @@ public class Requetes {
 
 		System.out.println("===================================");
 	}
-
+	
+	
+	
+/**
+ * Methode qui affiche tous les apprenants pour une meme region
+ * @throws SQLException
+ */
 	public static void listeApprenantsPourChaqueRegion() throws SQLException {
 
 		saisie = new Scanner(System.in);
@@ -54,7 +70,12 @@ public class Requetes {
 
 		System.out.println("===================================");
 	}
-
+	
+	
+/**
+ * Methode qui affiche les activites d'un apprenant avec son nom
+ * @throws SQLException
+ */
 	public static void rechercheApprenantAfficheActivite() throws SQLException {
 
 		saisie = new Scanner(System.in);
@@ -78,6 +99,13 @@ public class Requetes {
 		System.out.println("===================================");
 
 	}
+	
+
+/**
+ * Methode qui affiche les apprenants en fonction d'une activite
+ * @param activite
+ * @throws SQLException
+ */
 
 	public static void rechercheApprenantPratiqueActivite(String activite) throws SQLException {
 
