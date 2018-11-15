@@ -3,8 +3,8 @@ package table;
 /**
  * @author Christine
  * initialisation des variables de la TABLE apprenant
- * création des constructeurs
- * création des getter et des setter
+ * crï¿½ation des constructeurs
+ * crï¿½ation des getter et des setter
  * 
  * import de la bibliotheque Date pour gerer le traitement du format date 
  */
@@ -32,10 +32,9 @@ public class Apprenant {
 		/**
 		 * generation constructeur avec parametre
 		 */
-		public Apprenant(int apprenantId, String nom, String prenom, Date dateNaissance, String mail, String photo,
+		public Apprenant(String nom, String prenom, Date dateNaissance, String mail, String photo,
 				int regionId) {
-			super();
-			this.apprenantId = apprenantId;
+			
 			this.nom = nom;
 			this.prenom = prenom;
 			this.dateNaissance = dateNaissance;

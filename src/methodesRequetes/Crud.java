@@ -41,7 +41,7 @@ public class Crud {
 		
 	}
 	/**
-	 * Methode qui ajoute une nouvelle activité à un apprenant
+	 * Methode qui ajoute une nouvelle activitï¿½ ï¿½ un apprenant
 	 * @param avoir
 	 * @throws SQLException
 	 */
@@ -58,18 +58,18 @@ public class Crud {
 	}
 	
 	/**
-	 * Methode qui affiche les activité non utilisé par les apprenants
+	 * Methode qui affiche les activitï¿½ non utilisï¿½ par les apprenants
 	 * @throws SQLException
 	 */
 	
 	public static void activiteNotUse() throws SQLException {
 		
-		ResultSet resultat = AccesBd.faireUneRequete("SELECT activite.nomActivite FROM activite WHERE activite.activiteId NOT IN (SELECT avoir.activiteId FROM avoir");
+		ResultSet resultat = AccesBd.faireUneRequete("SELECT activite.nomActivite FROM activite WHERE activite.activiteId NOT IN (SELECT avoir.activiteId FROM avoir)");
 		
 		while(resultat.next()) {
 			String nomactivite = resultat.getString("nomActivite");
 			
-			System.out.println(nomactivite + " n'est pas utilisé.");
+			System.out.println(nomactivite + " n'est pas utilisï¿½.");
 		}
 		
 	}
@@ -77,7 +77,7 @@ public class Crud {
 	public static void updateName() throws SQLException {
 		
 		
-		System.out.println("Entrez le numéro de l'apprenant que vous voulez modifier : ");
+		System.out.println("Entrez le numï¿½ro de l'apprenant que vous voulez modifier : ");
 		int numero = saisie.nextInt();
 		System.out.println("Entrez le nouveau nom d'un apprenant pour le modifier : ");
 		String newName = saisie.nextLine();
