@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Scanner;
 
 import connection.AccesBd;
 import table.Apprenant;
@@ -31,14 +32,19 @@ public class Crud {
 		
 		PreparedStatement ajouter = AccesBd.getConnection().prepareStatement("INSERT INTO `avoir` VALUES( ? , ? )");
 		
+		ajouter.setInt(1, avoir.getActiviteId());
+		ajouter.setInt(2, avoir.getApprenantId());
+		
+		ajouter.executeUpdate();
+		
 	}
 	
 	public static void activiteNotUse() throws SQLException {
 		
-		ResultSet resultat = AccesBd.faireUneRequete("SELECT activite.typeActivite FROM activite WHERE activite.activiteId NOT IN (SELECT avoir.activiteId FROM avoir");
+		ResultSet resultat = AccesBd.faireUneRequete("SELECT activite.nomActivite FROM activite WHERE activite.activiteId NOT IN (SELECT avoir.activiteId FROM avoir");
 		
 		while(resultat.next()) {
-			String nomactivite = resultat.getString("typeActivite");
+			String nomactivite = resultat.getString("nomActivite");
 			
 			System.out.println(nomactivite + " n'est pas utilisé.");
 		}
@@ -46,6 +52,10 @@ public class Crud {
 	}
 	
 	public static void updateName() {
+		
+		saisie = new Scanner(System.in);
+		System.out.println("Entrez le nom d'un apprenant pour le modifier : ");
+		String apprenant = saisie.nextLine();
 		
 	}
 	

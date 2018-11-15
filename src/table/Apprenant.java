@@ -9,7 +9,7 @@ package table;
  * import de la bibliotheque Date pour gerer le traitement du format date 
  */
 
-import java.util.Date; // import de la bibliotheque Date
+import java.sql.Date; // import de la bibliotheque Date
 
 public class Apprenant {
 	
