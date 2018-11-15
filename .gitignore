@@ -3,4 +3,10 @@
 
 desktop.ini
 
+# tous les fichiers de config
+.*
+
+# sauf le gitignore
+!.gitignore
+
 *.class
