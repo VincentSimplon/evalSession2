@@ -11,6 +11,8 @@ import table.Apprenant;
 import table.Avoir;
 
 public class Crud {
+	
+	Scanner saisie;
 
 	public static void createNewApprenant(Apprenant apprenant) throws SQLException {
 		
