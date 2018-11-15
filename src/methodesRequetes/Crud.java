@@ -53,11 +53,21 @@ public class Crud {
 		
 	}
 	
-	public static void updateName() {
+	public static void updateName(Apprenant apprenant) throws SQLException {
 		
 		
-		System.out.println("Entrez le nom d'un apprenant pour le modifier : ");
-		String apprenant = saisie.nextLine();
+		System.out.println("Entrez le numéro de l'apprenant que vous voulez modifier : ");
+		int numero = saisie.nextInt();
+		System.out.println("Entrez le nouveau nom d'un apprenant pour le modifier : ");
+		String newName = saisie.nextLine();
+		
+		PreparedStatement ajouter = AccesBd.getConnection().prepareStatement("UPDATE apprenant SET nom = ? WHERE apprenantId = ?");
+		
+				
+		ajouter.setInt(2, numero);
+		ajouter.setString(1, newName);
+		
+		ajouter.executeUpdate();
 		
 	}
 	
