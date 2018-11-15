@@ -1,55 +1,80 @@
 package methodesRequetes;
 
-/**
- * import ClassNotFoundException :  tente de charger une classe via son nom de chaîne 
- * mais aucune définition de la classe avec le nom spécifié n'a pu être trouvée.
- * import SQLException : fournit des informations sur une erreur d'accès à la base de données.
- * 
- */
-
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.Scanner;
 
-import connection.AccesBD;
+
+import connection.AccesBd;
+import table.Activite;
 import table.Apprenant;
 
 public class Requetes {
 	
-	/**
-	 * Méthode qui retourne une liste d'objets de type Apprenant
-	 * @return
-	 * @throws ClassNotFoundException
-	 * @throws SQLException 
-	 */
-	public static ArrayList<Apprenant> afficherNomEtPrenomApprenant() throws ClassNotFoundException, SQLException {
+	static Scanner saisie;
+
+	public static void afficherNomEtPrenomTousLesApprenants() throws SQLException {
+
+		ResultSet resultat = AccesBd.faireUneRequete("SELECT nom, prenom FROM apprenant");
+
+		while(resultat.next()) {
+
+			String colonne1 = resultat.getString("nom");
+			String colonne2 = resultat.getString("prenom");
+			System.out.println(colonne1 + " " + colonne2);
+
+		}
+	}
+	
+	public static void listeApprenantsPourChaqueRegion() throws SQLException {
 		
-		ArrayList<Apprenant>  etudiants = new ArrayList<Apprenant>();
-		String requete	= "SELECT nom, prenom FROM apprenant";
-		ResultSet resultat = AccesBD.executeRequete(requete);
+		ResultSet resultat = AccesBd.faireUneRequete("SELECT apprenant.nom, apprenant.prenom, region.nom FROM apprenant, region WHERE apprenant.regionId = region.regionId");
 		
-		while(resultat.next())
-		{
-			Apprenant eleve = new Apprenant();
-			eleve.setNom(resultat.getString("nom"));
-			eleve.setPrenom(resultat.getString("prenom"));
-			etudiants.add(eleve);
+		while(resultat.next()) {
+			
+			String colonne1 = resultat.getString("apprenant.nom");
+			String colonne2 = resultat.getString("apprenant.prenom");
+			String colonne3 = resultat.getString("region.nom");
+			System.out.println(colonne1 + " " + colonne2 + " " + colonne3);
 			
 		}
-		return etudiants;
+	}
+	
+	public static void rechercheApprenantAfficheActivite() throws SQLException {
+		
+		saisie = new Scanner(System.in);
+		System.out.println("Entrez le nom d'un apprenant pour afficher ses activitÃ©s : ");
+		String apprenant = saisie.nextLine();
+		
+		PreparedStatement prepaInstru = AccesBd.getConnection().prepareStatement("SELECT avoir.activiteId, activite.typeActivite, apprenant.nom FROM avoir, activite, apprenant WHERE activite.activiteId = avoir.activiteId AND apprenant.apprenantID = avoir.apprenantId AND apprenant.nom = ?");
+		prepaInstru.setString(1, apprenant);
+		ResultSet resultat = prepaInstru.executeQuery();
+		while(resultat.next()) {
+			
+			String colonne1 = resultat.getString("avoir.activiteId");
+			String colonne2 = resultat.getString("activite.typeActivite");
+			String colonne3 = resultat.getString("apprenant.nom");
+			System.out.println(colonne1 + " " + colonne2 + " " + colonne3);
+		}
+		
 		
 	}
 	
-	public static String listeApprenantRegion (int regionId) {
-		return null;
-	}
-	
-	public static String activiteApprenant (String nom) {
-		return null;
-	}
-	
-	public static String apprenantActivite (int activiteId) {
-		return null;
+	public static void rechercheApprenantPratiqueActivite(String activite) throws SQLException {
+		
+		
+		PreparedStatement prepaInstru = AccesBd.getConnection().prepareStatement("SELECT apprenant.nom, activite.typeActivite FROM avoir, activite, apprenant WHERE activite.activiteId = avoir.activiteId AND apprenant.apprenantID = avoir.apprenantId AND activite.numeroActivite = ?");
+		prepaInstru.setString(1, activite);
+		ResultSet resultat = prepaInstru.executeQuery();
+		while(resultat.next()) {
+			
+			String colonne1 = resultat.getString("apprenant.nom");
+			String colonne2 = resultat.getString("activite.typeActivite");
+			System.out.println(colonne1 + " " + colonne2);
 	}
 
+	}
 }
+
+

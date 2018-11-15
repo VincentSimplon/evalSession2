@@ -1,16 +1,20 @@
 package main;
 
-import connection.AccesBD;
+
+
+import java.sql.SQLException;
+
+import methodesRequetes.Requetes;
 
 public class Affichage {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		
-		AccesBD.connexion();
-		
-		
+		Requetes.afficherNomEtPrenomTousLesApprenants();
+		Requetes.listeApprenantsPourChaqueRegion();
+		Requetes.rechercheApprenantAfficheActivite();
+		Requetes.rechercheApprenantPratiqueActivite("005");
 		
 		
 	}
-
 }
