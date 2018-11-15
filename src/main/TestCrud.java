@@ -12,7 +12,7 @@ public class TestCrud {
 	
 	public static void main(String[] args) throws SQLException {
 		
-		Crud.updateName();
+		//Crud.updateName();
 		
 		//Avoir ajoutActivite = new Avoir(8, 17);
 		//Crud.newActiviteNewApprenant(ajoutActivite);
