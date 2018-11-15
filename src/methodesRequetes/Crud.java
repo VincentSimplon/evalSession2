@@ -1,5 +1,8 @@
 package methodesRequetes;
 
+/**
+ * Prepared
+ */
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,7 +16,11 @@ import table.Avoir;
 public class Crud {
 	
 	static Scanner saisie = new Scanner(System.in);
-
+/**
+ * Methode qui creer un nouvel apprenant dans la table apprenant
+ * @param apprenant
+ * @throws SQLException
+ */
 	public static void createNewApprenant(Apprenant apprenant) throws SQLException {
 		
 		PreparedStatement changement = AccesBd.getConnection().prepareStatement("INSERT INTO `apprenant` VALUES( ? , ? , ? , ? , ? , ? , ? )");
@@ -29,6 +36,11 @@ public class Crud {
 		changement.executeUpdate();
 		
 	}
+	/**
+	 * Methode qui ajoute une nouvelle activité à un apprenant
+	 * @param avoir
+	 * @throws SQLException
+	 */
 	
 	public static void newActiviteNewApprenant(Avoir avoir) throws SQLException {
 		
@@ -40,6 +52,11 @@ public class Crud {
 		ajouter.executeUpdate();
 		
 	}
+	
+	/**
+	 * Methode qui affiche les activité non utilisé par les apprenants
+	 * @throws SQLException
+	 */
 	
 	public static void activiteNotUse() throws SQLException {
 		
