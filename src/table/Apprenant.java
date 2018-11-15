@@ -1,5 +1,12 @@
 package table;
 
+/**
+ * @author Christine
+ * initialisation des variables de la TABLE apprenant
+ * creation des constructeurs
+ * creation des getter et des setter
+ */
+
 public class Apprenant {
 	
 		private int apprenantId;

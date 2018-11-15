@@ -3,8 +3,8 @@ package table;
 /**
  * @author Vincent.Co
  * initialisation des variables de la TABLE region
- * cr�ation des constructeurs
- * cr�ation des getter et des setter
+ * creation des constructeurs
+ * creation des getter et des setter
  */
 
 public class Region {

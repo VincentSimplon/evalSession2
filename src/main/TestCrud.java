@@ -1,5 +1,10 @@
 package main;
 
+/**
+ * @author Vincent et christine
+ * class qui permet l'affichage des differentes methodes du CRUD
+ */
+
 import java.sql.SQLException;
 
 import methodesRequetes.Crud;

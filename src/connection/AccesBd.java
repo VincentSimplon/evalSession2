@@ -12,22 +12,22 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- *  Connection : Une connexion avec une base de donn�es sp�cifique. 
- *  Les instructions SQL sont ex�cut�es et les r�sultats sont renvoy�s dans le contexte d'une connexion.
- *  un objet Connection est capable de fournir des informations d�crivant ses tables
+ *  Connection : Une connexion avec une base de donnees specifique. 
+ *  Les instructions SQL sont executees et les resultats sont renvoyes dans le contexte d'une connexion.
+ *  un objet Connection est capable de fournir des informations decrivant ses tables
  *   
  *  DriverManager : permet de chercher le pilote de connection
  *  
- *  ResultSet : s'utilise lors d'une instruction qui interroge la base de donn�es.
- *  Un ResultSetobjet maintient un curseur pointant sur sa ligne de donn�es actuelle.  
- *  La nextm�thode d�place le curseur sur la ligne suivante et, comme elle est renvoy�e false 
- *  lorsqu'il n'y a plus de lignes dans l' ResultSetobjet, elle peut �tre utilis�e dans une whileboucle 
- *  pour parcourir le jeu de r�sultats.
+ *  ResultSet : s'utilise lors d'une instruction qui interroge la base de donnees.
+ *  Un ResultSetobjet maintient un curseur pointant sur sa ligne de donnees actuelle.  
+ *  La next methode deplace le curseur sur la ligne suivante, comme elle renvoye false 
+ *  lorsqu'il n'y a plus de lignes, elle peut etre utilisee dans une whileboucle 
+ *  pour parcourir le jeu de resultats.
  *  
- *  SQLExecption : fournit des informations sur une erreur d'acc�s � la base de donn�es ou d'autres erreurs.
- *  printStackTrace : affiche l'exception et l'�tat d'ex�cution au moment de son appel
+ *  SQLExecption : fournit des informations sur une erreur d'acces a la base de donnees ou d'autres erreurs.
+ *  printStackTrace : affiche l'exception et l'etat d'execution au moment de son appel
  *  
- *  Statement : Objet utilis� pour ex�cuter une instruction SQL statique et renvoyer les r�sultats obtenus.
+ *  Statement : Objet utilise pour executer une instruction SQL statique et renvoyer les resultats obtenus.
  *
  */
 
@@ -58,7 +58,7 @@ public class AccesBd {
 	}
 	
 	/**
-	 * M�thode permettant d'�tablir la connection
+	 * Methode permettant d'etablir la connection
 	 * @return connection de type Connection
 	 */
 	
@@ -77,7 +77,7 @@ public class AccesBd {
 	}
 	
 	/**
-	 * M�thode permettant d'executer une requete
+	 * Methode permettant d'executer une requete
 	 * @param requete ( la requete en SQL )
 	 * @return resultat de type ResultSet
 	 */
