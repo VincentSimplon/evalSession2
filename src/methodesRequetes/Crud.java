@@ -41,7 +41,7 @@ public class Crud {
 		
 	}
 	/**
-	 * Methode qui ajoute une nouvelle activit� � un apprenant
+	 * Methode qui ajoute une nouvelle activite a un apprenant
 	 * @param avoir
 	 * @throws SQLException
 	 */
@@ -58,7 +58,7 @@ public class Crud {
 	}
 	
 	/**
-	 * Methode qui affiche les activit� non utilis� par les apprenants
+	 * Methode qui affiche les activite non utilise par les apprenants
 	 * @throws SQLException
 	 */
 	
@@ -69,18 +69,21 @@ public class Crud {
 		while(resultat.next()) {
 			String nomactivite = resultat.getString("nomActivite");
 			
-			System.out.println(nomactivite + " n'est pas utilis�.");
+			System.out.println(nomactivite + " n'est pas utilise.");
 		}
 		
 	}
+	/**
+	 * Methode qui change le nom d'un apprenant
+	 * @throws SQLException
+	 */
 	
 	public static void updateName() throws SQLException {
 		
-		
-		System.out.println("Entrez le num�ro de l'apprenant que vous voulez modifier : ");
-		int numero = saisie.nextInt();
 		System.out.println("Entrez le nouveau nom d'un apprenant pour le modifier : ");
 		String newName = saisie.nextLine();
+		System.out.println("Entrez le numero de l'apprenant que vous voulez modifier : ");
+		int numero = saisie.nextInt();
 		
 		PreparedStatement ajouter = AccesBd.getConnection().prepareStatement("UPDATE apprenant SET nom = ? WHERE apprenantId = ?");
 		
