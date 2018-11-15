@@ -6,7 +6,7 @@ package methodesRequetes;
  * PreparedStatement : Une instruction SQL est precompilee et stockee dans un PreparedStatementobjet. 
  * Cet objet peut ensuite etre utilise pour executer efficacement cette instruction plusieurs fois.
  * 
- * executeUpdate : Exécute l'instruction SQL fournie, qui peut être une instruction 
+ * executeUpdate : Exï¿½cute l'instruction SQL fournie, qui peut ï¿½tre une instruction 
  * INSERT, UPDATE ou DELETE ; ou une instruction SQL qui ne retourne rien.
  * 
  */
@@ -37,7 +37,7 @@ public class Crud {
 		changement.setInt(1,apprenant.getApprenantId());
 		changement.setString(2,apprenant.getNom());
 		changement.setString(3,apprenant.getPrenom());
-		changement.setDate(4, apprenant.getDateNaissance());
+		changement.setString(4, apprenant.getDateNaissance());
 		changement.setString(5, apprenant.getMail());
 		changement.setString(6, apprenant.getPhoto());
 		changement.setInt(7, apprenant.getRegionId());
@@ -109,12 +109,12 @@ public class Crud {
 	 */
 	public static void deleteApprenant() throws SQLException {
 		
-		System.out.println("Entrez le numéro de l'apprenant que vous voulez supprimer : ");
+		System.out.println("Entrez le numï¿½ro de l'apprenant que vous voulez supprimer : ");
 		int numero = saisie.nextInt();
 		
-		PreparedStatement supprimer = AccesBd.getConnection().prepareStatement("DELETE apprenant WHERE apprenantId = ?");
+		PreparedStatement supprimer = AccesBd.getConnection().prepareStatement("DELETE FROM apprenant WHERE apprenantId = ?");
 		
-		supprimer.setInt(2, numero);
+		supprimer.setInt(1, numero);
 		
 		supprimer.executeUpdate();
 				

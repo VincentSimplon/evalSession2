@@ -10,10 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-
 import connection.AccesBd;
-import table.Activite;
-import table.Apprenant;
 
 public class Requetes {
 

@@ -1,13 +1,13 @@
 package main;
 
+import java.sql.SQLException;
+
 /**
  * @author Vincent
  * class qui permet l'affichage des differentes methodes dans un menu
  */
 
 import java.util.Scanner;
-
-import java.sql.SQLException;
 
 import methodesRequetes.Requetes;
 

@@ -1,23 +1,17 @@
 package main;
 
-/**
- * @author Vincent et christine
- * Methode qui permet de lancer les methodes de la classe CRUD
- */
-import java.sql.Date;
-
-
 import java.sql.SQLException;
 
 import methodesRequetes.Crud;
 import table.Apprenant;
-import table.Avoir;
 
 public class TestCrud {
 	
 	
 	
 	public static void main(String[] args) throws SQLException {
+		
+		Crud.deleteApprenant();
 		
 		//Crud.updateName();
 		

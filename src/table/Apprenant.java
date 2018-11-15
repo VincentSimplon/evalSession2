@@ -1,22 +1,11 @@
 package table;
 
-/**
- * @author Christine
- * initialisation des variables de la TABLE apprenant
- * cr�ation des constructeurs
- * cr�ation des getter et des setter
- * 
- * import de la bibliotheque Date pour gerer le traitement du format date 
- */
-
-import java.sql.Date; // import de la bibliotheque Date
-
 public class Apprenant {
 	
 		private int apprenantId;
 		private String nom;
 		private String prenom;
-		private Date dateNaissance;
+		private String dateNaissance;
 		private String mail;
 		private String photo;
 		private int regionId;
@@ -32,7 +21,7 @@ public class Apprenant {
 		/**
 		 * generation constructeur avec parametre
 		 */
-		public Apprenant(String nom, String prenom, Date dateNaissance, String mail, String photo,
+		public Apprenant(String nom, String prenom, String dateNaissance, String mail, String photo,
 				int regionId) {
 			
 			this.nom = nom;
@@ -71,11 +60,11 @@ public class Apprenant {
 			this.prenom = prenom;
 		}
 
-		public Date getDateNaissance() {
+		public String getDateNaissance() {
 			return dateNaissance;
 		}
 
-		public void setDateNaissance(Date dateNaissance) {
+		public void setDateNaissance(String dateNaissance) {
 			this.dateNaissance = dateNaissance;
 		}
 

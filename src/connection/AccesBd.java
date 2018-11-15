@@ -2,7 +2,7 @@ package connection;
 
 /**
  * @author Vincent
- * classe permettant la connection à la base de données
+ * classe permettant la connection ï¿½ la base de donnï¿½es
  */
 
 import java.sql.Connection;
@@ -12,22 +12,22 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- *  Connection : Une connexion avec une base de données spécifique. 
- *  Les instructions SQL sont exécutées et les résultats sont renvoyés dans le contexte d'une connexion.
- *  un objet Connection est capable de fournir des informations décrivant ses tables
+ *  Connection : Une connexion avec une base de donnï¿½es spï¿½cifique. 
+ *  Les instructions SQL sont exï¿½cutï¿½es et les rï¿½sultats sont renvoyï¿½s dans le contexte d'une connexion.
+ *  un objet Connection est capable de fournir des informations dï¿½crivant ses tables
  *   
  *  DriverManager : permet de chercher le pilote de connection
  *  
- *  ResultSet : s'utilise lors d'une instruction qui interroge la base de données.
- *  Un ResultSetobjet maintient un curseur pointant sur sa ligne de données actuelle.  
- *  La nextméthode déplace le curseur sur la ligne suivante et, comme elle est renvoyée false 
- *  lorsqu'il n'y a plus de lignes dans l' ResultSetobjet, elle peut être utilisée dans une whileboucle 
- *  pour parcourir le jeu de résultats.
+ *  ResultSet : s'utilise lors d'une instruction qui interroge la base de donnï¿½es.
+ *  Un ResultSetobjet maintient un curseur pointant sur sa ligne de donnï¿½es actuelle.  
+ *  La nextmï¿½thode dï¿½place le curseur sur la ligne suivante et, comme elle est renvoyï¿½e false 
+ *  lorsqu'il n'y a plus de lignes dans l' ResultSetobjet, elle peut ï¿½tre utilisï¿½e dans une whileboucle 
+ *  pour parcourir le jeu de rï¿½sultats.
  *  
- *  SQLExecption : fournit des informations sur une erreur d'accès à la base de données ou d'autres erreurs.
- *  printStackTrace : affiche l'exception et l'état d'exécution au moment de son appel
+ *  SQLExecption : fournit des informations sur une erreur d'accï¿½s ï¿½ la base de donnï¿½es ou d'autres erreurs.
+ *  printStackTrace : affiche l'exception et l'ï¿½tat d'exï¿½cution au moment de son appel
  *  
- *  Statement : Objet utilisé pour exécuter une instruction SQL statique et renvoyer les résultats obtenus.
+ *  Statement : Objet utilisï¿½ pour exï¿½cuter une instruction SQL statique et renvoyer les rï¿½sultats obtenus.
  *
  */
 
@@ -39,7 +39,7 @@ public class AccesBd {
 	private static String utilisateur="root";
 	private static String motDePasse="Bruc3Wayn3023007";
 	private static String pilote = "com.mysql.cj.jdbc.Driver";
-	private static String url = "jdbc:mysql://localhost:3306/bd_apprenants?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+	private static String url = "jdbc:mysql://localhost:3306/bd_apprenants?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
 	private static Connection connection = null;
 
 	
@@ -58,7 +58,7 @@ public class AccesBd {
 	}
 	
 	/**
-	 * Méthode permettant d'établir la connection
+	 * Mï¿½thode permettant d'ï¿½tablir la connection
 	 * @return connection de type Connection
 	 */
 	
@@ -77,7 +77,7 @@ public class AccesBd {
 	}
 	
 	/**
-	 * Méthode permettant d'executer une requete
+	 * Mï¿½thode permettant d'executer une requete
 	 * @param requete ( la requete en SQL )
 	 * @return resultat de type ResultSet
 	 */
