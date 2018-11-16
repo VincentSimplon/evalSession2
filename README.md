@@ -21,6 +21,8 @@ naissance, son email et sa photo. Une région est identifiée par un numéro
 d’ordre auto-généré et commençant par 1. Un libellé lui est associé.
 la liste des activités qui doivent être enregistrées dans la base.
 
+![MCD](https://github.com/VincentSimplon/evalSession2/blob/master/src/connection/MCD.jpg)
+
 
 ## *Outil utilisé*
 
